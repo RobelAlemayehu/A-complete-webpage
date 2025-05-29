@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f2f6ff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  color: #092c58;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #287bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1a5fdc;
+}
+
+/* Header */
+.header {
+  background-color: #bcdcff;
+  padding: 3rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.header-content {
+  max-width: 600px;
+}
+
+.header-phone {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  max-width: 150px;
+}
+
+/* Features */
+.features {
+  padding: 3rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.features-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.feature h3 {
+  margin-top: 1rem;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 3rem 2rem;
+  background-color: #f3eefe;
+  text-align: center;
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial p {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+.testimonial p:last-child {
+  font-weight: bold;
+}
+
+.testimonial a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #287bff;
+}
+
+/* Therapists */
+.therapists {
+  padding: 3rem 2rem;
+  background-color: #f9fbff;
+  text-align: center;
+}
+
+.therapists-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.therapist p {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* FAQ */
+.faq {
+  padding: 3rem 2rem;
+  background-color: #e6f0ff;
+  text-align: center;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.accordion {
+  width: 100%;
+  background-color: #287bff;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.accordion:hover {
+  background-color: #1a5fdc;
+}
+
+.panel {
+  padding: 0 1rem;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem;
+  background-color: #092c58;
+  color: #fff;
+  text-align: center;
+}
+
+.footer nav {
+  margin-bottom: 1rem;
+}
+
+.footer nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: #287bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+#theme-toggle:hover {
+  background: #1a5fdc;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.dark-mode .header,
+.dark-mode .features,
+.dark-mode .testimonials,
+.dark-mode .faq,
+.dark-mode .showcase,
+.dark-mode .therapists,
+.dark-mode .footer {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark-mode .btn {
+  background-color: #444;
+}
+
+.dark-mode .btn:hover {
+  background-color: #666;
+}
+
+.dark-mode .accordion {
+  background-color: #333;
+}
+
+.dark-mode .accordion:hover {
+  background-color: #444;
+}
+
+.dark-mode .panel {
+  background-color: #222;
+}
+
+.dark-mode .testimonial {
+  background-color: #2a2a2a;
+}
+
+.dark-mode .testimonial p {
+  color: #f5f5f5;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-phone {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .features-container,
+  .showcase-images,
+  .therapists-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

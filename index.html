@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindSpace</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f2f6ff;
+        color: #1a1a1a;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #092c58;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: #287bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #1a5fdc;
+      }
+
+      .header {
+        background-color: #bcdcff;
+        padding: 3rem 2rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .header-content {
+        max-width: 600px;
+      }
+
+      .header-phone {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        max-width: 150px;
+      }
+
+      .features {
+        padding: 3rem 2rem;
+        background-color: #fff;
+        text-align: center;
+      }
+
+      .features-container {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .feature h3 {
+        margin-top: 1rem;
+      }
+
+      .showcase {
+        padding: 3rem 2rem;
+        background-color: #e6f0ff;
+        text-align: center;
+      }
+
+      .showcase-images {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .testimonials {
+        padding: 3rem 2rem;
+        background-color: #fff;
+        text-align: center;
+      }
+
+      .testimonial {
+        margin-bottom: 2rem;
+      }
+
+      .testimonial a {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #287bff;
+      }
+
+      .therapists {
+        padding: 3rem 2rem;
+        background-color: #f9fbff;
+        text-align: center;
+      }
+
+      .therapists-container {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .therapist p {
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+
+      .faq {
+        padding: 3rem 2rem;
+        background-color: #e6f0ff;
+        text-align: center;
+      }
+
+      .faq-item {
+        margin-bottom: 1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      .accordion {
+        width: 100%;
+        background-color: #287bff;
+        color: white;
+        cursor: pointer;
+        padding: 1rem;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
+      }
+
+      .accordion:hover {
+        background-color: #1a5fdc;
+      }
+
+      .panel {
+        padding: 0 1rem;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+        border-radius: 0 0 5px 5px;
+      }
+
+      .footer {
+        padding: 2rem;
+        background-color: #092c58;
+        color: #fff;
+        text-align: center;
+      }
+
+      .footer nav {
+        margin-bottom: 1rem;
+      }
+
+      .footer nav a {
+        color: #fff;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .footer nav a:hover {
+        text-decoration: underline;
+      }
+
+      #theme-toggle {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background: #287bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s;
+      }
+
+      #theme-toggle:hover {
+        background: #1a5fdc;
+      }
+
+      .dark-mode {
+        background-color: #121212;
+        color: #f5f5f5;
+      }
+
+      .dark-mode .header,
+      .dark-mode .features,
+      .dark-mode .testimonials,
+      .dark-mode .faq,
+      .dark-mode .showcase,
+      .dark-mode .therapists,
+      .dark-mode .footer {
+        background-color: #1e1e1e;
+        color: #f5f5f5;
+      }
+
+      .dark-mode .btn {
+        background-color: #444;
+      }
+
+      .dark-mode .btn:hover {
+        background-color: #666;
+      }
+
+      .dark-mode .accordion {
+        background-color: #333;
+      }
+
+      .dark-mode .accordion:hover {
+        background-color: #444;
+      }
+
+      .dark-mode .panel {
+        background-color: #222;
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          align-items: center;
+          text-align: center;
+        }
+
+        .header-phone {
+          position: static;
+          margin-top: 2rem;
+        }
+
+        .features-container,
+        .showcase-images,
+        .therapists-container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .dark-mode .testimonials-section {
+        background-color: #1e1e1e !important;
+      }
+
+      .dark-mode .testimonials-section h2 {
+        color: #f5f5f5 !important;
+      }
+
+      .dark-mode .testimonial {
+        background-color: #2a2a2a !important;
+        color: #f5f5f5 !important;
+      }
+
+      .dark-mode .testimonial p {
+        color: #f5f5f5 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1>Find calm and balance for your mind</h1>
+        <p>Mindfulness Exercises for university students</p>
+        <a href="https://play.google.com/store/apps" target="_blank" class="btn"
+          >Download app</a
+        >
+      </div>
+      <img
+        src="assets/images/mood-checkin-phone.png"
+        height="200"
+        alt="Mood Check In App"
+        class="header-phone"
+      />
+    </header>
+
+    <main>
+      <!-- Features -->
+      <section class="features">
+        <h2>App Features</h2>
+        <div class="features-container">
+          <div class="feature">
+            <img
+              src="assets/images/feature-moodtracker.png"
+              height="100"
+              alt="Mood Tracker"
+            />
+            <h3>Mood Tracker</h3>
+          </div>
+          <div class="feature">
+            <img
+              src="assets/images/feature-breathing.png"
+              height="100"
+              alt="Breathing Exercises"
+            />
+            <h3>Breathing Exercises</h3>
+          </div>
+          <div class="feature">
+            <img
+              src="assets/images/feature-journal.png"
+              height="100"
+              alt="Journal"
+            />
+            <h3>Journals</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section
+        class="testimonials-section"
+        style="background-color: #f3eefe; padding: 40px 0"
+      >
+        <h2
+          style="
+            text-align: center;
+            font-family: 'Georgia', serif;
+            color: #1a1a1a;
+            font-size: 2rem;
+            margin-bottom: 30px;
+          "
+        >
+          Testimonials
+        </h2>
+        <div
+          class="testimonials-container"
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+          "
+        >
+          <div
+            class="testimonial"
+            style="
+              background: white;
+              border-radius: 20px;
+              padding: 20px;
+              max-width: 250px;
+              text-align: center;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <img
+              src="assets/images/testimonial-sarah.jpg"
+              alt="Sarah"
+              style="
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 15px;
+              "
+            />
+            <p
+              style="
+                font-family: 'Georgia', serif;
+                font-size: 1rem;
+                color: #333;
+              "
+            >
+              MindSpace has helped me to manage academic stress
+            </p>
+            <p style="font-weight: bold; color: #333">Sarah</p>
+          </div>
+
+          <div
+            class="testimonial"
+            style="
+              background: white;
+              border-radius: 20px;
+              padding: 20px;
+              max-width: 250px;
+              text-align: center;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <img
+              src="assets/images/testimonial-john.jpg"
+              alt="John"
+              style="
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 15px;
+              "
+            />
+            <p
+              style="
+                font-family: 'Georgia', serif;
+                font-size: 1rem;
+                color: #333;
+              "
+            >
+              Using this app daily has significantly reduced my anxiety
+            </p>
+            <p style="font-weight: bold; color: #333">John</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Therapists -->
+      <section class="therapists">
+        <h2>Meet Therapists</h2>
+        <div class="therapists-container">
+          <div class="therapist">
+            <img
+              src="assets/images/therapist-lucas.png"
+              height="100"
+              alt="Dr. Lucas Reed"
+            />
+            <p>Dr. Lucas Reed</p>
+          </div>
+          <div class="therapist">
+            <img
+              src="assets/images/therapist-emma.png"
+              height="100"
+              alt="Dr. Emma Blake"
+            />
+            <p>Dr. Emma Blake</p>
+          </div>
+          <div class="therapist">
+            <img
+              src="assets/images/therapist-natalie.png"
+              height="100"
+              alt="Dr. Natalie Chen"
+            />
+            <p>Dr. Natalie Chen</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+          <button class="accordion">What is MindSpace?</button>
+          <div class="panel">
+            <p>
+              MindSpace is a mindfulness and mental wellness app tailored for
+              university students.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="accordion">Is it free to use?</button>
+          <div class="panel">
+            <p>
+              Yes! The core features of MindSpace are free to support all
+              students.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="accordion">
+            Can I speak directly to a therapist?
+          </button>
+          <div class="panel">
+            <p>
+              Yes, you can connect with our licensed therapists through the app.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="accordion">Take a step towards peace of mind.</button>
+          <div class="panel">
+            <p>
+              Download the app today or join the wait list for early access to
+              exclusive features.
+            </p>
+          </div>
+        </div>
+        <a href="https://play.google.com/store/apps" target="_blank" class="btn"
+          >DOWNLOAD NOW</a
+        >
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <nav>
+        <a href="#">Terms</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+      </nav>
+      <p>MindSpace © 2025. All rights reserved.</p>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordions = document.querySelectorAll(".accordion");
+        accordions.forEach((accordion) => {
+          accordion.addEventListener("click", function () {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            panel.style.display =
+              panel.style.display === "block" ? "none" : "block";
+          });
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById("theme-toggle");
+        const root = document.documentElement;
+
+        if (localStorage.getItem("theme") === "dark") {
+          root.classList.add("dark-mode");
+          themeToggle.textContent = "☀️";
+        }
+
+        themeToggle.addEventListener("click", function () {
+          root.classList.toggle("dark-mode");
+          const isDark = root.classList.contains("dark-mode");
+          themeToggle.textContent = isDark ? "☀️" : "🌙";
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+      });
+    </script>
+  </body>
+</html>
